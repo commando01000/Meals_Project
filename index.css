@@ -1,0 +1,963 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+::selection {
+  background-color: #d85454;
+  color: white;
+}
+
+#navbar {
+  position: fixed;
+  width: 100%;
+  box-shadow: 0px 0px 15px 15px #0000001b;
+  z-index: 9999;
+}
+
+.nav-container {
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.nav-container .logo a {
+  text-decoration: none;
+  color: #212529;
+  font-family: "Inter", sans-serif;
+  font-size: 34px;
+  font-weight: 700;
+}
+
+.nav-container .dot {
+  color: red;
+  font-size: 35px;
+}
+
+.nav-container .logo a {
+  text-decoration: none;
+  color: rgb(33, 37, 41);
+}
+
+.nav-container ul {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  list-style: none;
+}
+
+.nav-container ul li {
+  padding: 10px;
+}
+
+.nav-list ul li a {
+  position: relative;
+}
+
+.nav-list ul li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0%;
+  height: 2px;
+  background-color: red;
+  transition: width 0.5s;
+}
+
+.nav-list ul li a:hover::after {
+  width: 100%;
+}
+
+.menu-icon {
+  font-size: 25px;
+  display: none;
+}
+
+@media screen and (max-width: 1200px) {
+  .nav-list ul {
+    display: none;
+  }
+
+  .light-mode {
+    display: none;
+  }
+
+  .menu-icon {
+    display: flex;
+  }
+}
+
+.nav-container .nav-list ul li a {
+  text-decoration: none;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 600;
+  font-size: 17px;
+  color: rgb(127, 127, 144);
+}
+
+.light-mode .fa-solid.fa-moon {
+  font-size: 25px;
+}
+
+#home {
+  background-color: #eeeeee;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  padding-top: 200px;
+  padding-bottom: 200px;
+}
+
+@media screen and (max-width: 1125px) {
+  #home picture {
+    margin-top: 100px;
+  }
+}
+
+.nav-container .nav-list ul li:hover a {
+  color: black;
+}
+
+/* .nav-container .nav-list ul li a:active {
+  color: red;
+} */
+
+.header-description h2 {
+  font-family: "Amatic SC", sans-serif;
+  font-weight: 700;
+  font-size: 65px;
+  line-height: normal;
+  color: color(55, 55, 63);
+}
+
+.header-description p {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 25.6px;
+  color: rgb(79, 79, 90);
+  font-style: normal;
+}
+
+#home picture img {
+  filter: drop-shadow(4px 4px 9px #000a);
+  width: 80%;
+}
+
+#home picture img:hover {
+  animation: shake 0.5s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes shake {
+  0% {
+    transform: translate(1px, 1px) rotate(0deg);
+  }
+  10% {
+    transform: translate(-1px, -2px) rotate(-1deg);
+  }
+  20% {
+    transform: translate(-3px, 0px) rotate(1deg);
+  }
+  30% {
+    transform: translate(3px, 2px) rotate(0deg);
+  }
+  40% {
+    transform: translate(1px, -1px) rotate(1deg);
+  }
+  50% {
+    transform: translate(-1px, 2px) rotate(-1deg);
+  }
+  60% {
+    transform: translate(-3px, 1px) rotate(0deg);
+  }
+  70% {
+    transform: translate(3px, 1px) rotate(-1deg);
+  }
+  80% {
+    transform: translate(-1px, -1px) rotate(1deg);
+  }
+  90% {
+    transform: translate(1px, 2px) rotate(0deg);
+  }
+  100% {
+    transform: translate(1px, -2px) rotate(-1deg);
+  }
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  /* justify-content: start; */
+  align-items: center;
+}
+
+#home .buttons .book {
+  border: 1px solid;
+  border-color: none;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 15px;
+  background-color: rgb(197, 15, 15);
+  padding: 10px;
+}
+
+#home .buttons .play {
+  width: 20px;
+  height: 45px;
+  background-color: red;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+  border-bottom: 0;
+  border-color: red;
+  margin-left: 25px;
+}
+
+#home .buttons .play .icon {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: white;
+  font-size: 1rem;
+  margin-right: 0.3125rem;
+  padding-left: 5px;
+  position: relative;
+  bottom: 1px;
+}
+
+#home .buttons .play .icon i {
+  position: relative;
+  top: 6px;
+  color: black;
+}
+
+#home .buttons .play .icon:hover i,
+.header-description .buttons .watch-vid a {
+  color: red !important;
+}
+
+.header-description .buttons .watch-vid a:last-child {
+  text-decoration: none;
+  color: rgb(33, 37, 41);
+  font-family: "Open Sans", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  margin-left: 20px;
+}
+
+#home .buttons .book a {
+  text-decoration: none;
+  color: white;
+  padding: 10px;
+}
+
+.chefs-container h2:first-child {
+  text-align: center;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  color: rgb(127, 127, 144);
+}
+
+.chefs-container p:nth-child(2) {
+  font-family: "Amatic SC", sans-serif;
+  font-weight: 400;
+  font-size: 50px;
+  text-align: center;
+  color: rgb(33, 37, 41);
+}
+
+.chefs-container p span {
+  color: #d85454;
+}
+
+#chefs {
+  margin-top: 100px;
+  height: 800px;
+}
+
+@media screen and (max-width: 898px) {
+  #chefs {
+    height: 1950px !important;
+  }
+}
+
+@media screen and (max-width: 1339px) {
+  #chefs {
+    height: 1400px;
+  }
+}
+
+.chefs-cards {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.chef-card {
+  border-radius: 25px;
+  box-sizing: border-box;
+  width: 416px;
+  height: 568px;
+  text-align: center;
+  margin-right: 25px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 3px 3px 15px 0px rgba(0, 0, 0, 0.3);
+  transition: scale 2s;
+}
+
+.chef-card .chef-image {
+  position: relative;
+}
+
+.chef-card .chef-image::after {
+  content: "";
+  background: url(./img/team-shape.svg);
+  position: absolute;
+  width: 100%;
+  height: 100px;
+  left: 0;
+  top: 77.5%;
+}
+
+.contact-chef {
+  position: absolute;
+  width: 60px;
+  height: 150px;
+  top: 5%;
+  left: 105%;
+  transition: left 1.5s;
+}
+
+.contact-chef ul {
+  height: 100%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  list-style: none;
+  border-radius: 10px;
+  background-color: #ffffff4d;
+}
+
+.contact-chef ul li {
+  padding: 8px;
+}
+
+.contact-chef ul li a {
+  text-decoration: none;
+  color: #37373f66;
+}
+
+.chef-card .chef-image img {
+  width: 100%;
+}
+
+/* .chef-card .chef-image img::after {
+  content: "asdasdad";
+  position: absolute;
+  bottom: -1px;
+  bottom: 100px;
+  background-color: green;
+  background-image: url(./img/team-shape.svg);
+  width: 100%;
+  height: 50px;
+} */
+
+.chef-card h3 {
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  font-size: 18.72px;
+  color: rgb(33, 37, 41);
+}
+
+.chef-card span {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  color: rgb(127, 127, 144);
+}
+
+.chef-card p {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  color: rgb(127, 127, 144);
+  font-style: italic;
+}
+
+.chef-card:hover {
+  transform: scale(1.05, 1.05);
+}
+
+.chef-card:hover .contact-chef {
+  left: 80%;
+}
+
+.contact-chef ul li a:hover {
+  color: #47464c;
+}
+
+#gallery {
+  background-color: #eeeeee;
+  height: 1450px;
+  /* margin-top: 200px; */
+}
+
+.gallery-container {
+  padding-top: 15px;
+  height: 100%;
+  display: grid;
+  justify-content: center;
+  grid-template: repeat(7, 142px) / repeat(3, 424px);
+  gap: 20px 20px;
+}
+
+@media screen and (max-width: 750px) {
+  .gallery-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: 100%;
+    margin: auto;
+  }
+
+  #gallery {
+    height: 5000px;
+  }
+
+  #contact {
+    margin-top: 400px !important;
+  }
+
+  .gallery-card {
+    width: 90%;
+  }
+  .gallery-card-layer {
+    width: 90%;
+  }
+}
+
+.gallery-heading h2 {
+  text-align: center;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  padding-top: 100px;
+  color: rgb(127, 127, 144);
+}
+
+.gallery-heading p {
+  text-align: center;
+  font-family: "Amatic SC", sans-serif;
+  font-weight: 400;
+  font-size: 50px;
+  text-align: center;
+  color: rgb(33, 37, 41);
+}
+
+#gallery p span {
+  color: #d85454;
+}
+
+.gallery-images {
+  width: 100%;
+  height: 100%;
+}
+
+.gallery-card.pizza {
+  grid-column: 1/2;
+  grid-row: 1/3;
+}
+
+.gallery-card.steak {
+  grid-column: 2/3;
+  grid-row: 1/6;
+}
+
+.gallery-card.burger {
+  grid-column: 3/4;
+  grid-row: 1/3;
+}
+
+.gallery-card.levitation-pizza {
+  grid-column: 1/2;
+  grid-row: 3/7;
+}
+
+.gallery-card.crispy-fried-chicken {
+  grid-column: 3/4;
+  grid-row: 3/5;
+}
+
+.gallery-card.lyulya-kebab {
+  grid-column: 3/4;
+  grid-row: 5/7;
+}
+
+.gallery-card.frittata {
+  grid-column: 2/3;
+  grid-row: 6/8;
+}
+
+.gallery-card {
+  position: relative;
+  border: 4px solid #fff;
+  overflow: hidden;
+  transition: transform 0.5s;
+}
+
+.gallery-card:hover .gallery-card-layer {
+  top: 0;
+}
+
+.gallery-card:hover {
+  transform: scale(1.1, 1.1);
+}
+
+.gallery-card-layer {
+  background-color: #00000096;
+  position: absolute;
+  top: 102%;
+  width: 100%;
+  height: 100%;
+  transition: top 0.5s;
+}
+
+.gallery-card-layer h2 {
+  font-family: "Inter", sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  position: relative;
+  top: 40%;
+  text-align: center;
+  color: rgb(255, 255, 255);
+}
+
+.gallery-card-layer p {
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  position: relative;
+  top: 42%;
+  text-align: center;
+  color: rgb(221, 221, 221);
+}
+
+#contact {
+  margin-top: 100px;
+}
+
+.contact-heading h2 {
+  text-align: center;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  color: rgb(127, 127, 144);
+}
+
+.contact-heading p {
+  font-family: "Amatic SC", sans-serif;
+  font-weight: 400;
+  font-size: 50px;
+  text-align: center;
+  color: rgb(33, 37, 41);
+}
+
+.contact-heading span {
+  color: #d85454;
+}
+
+.contact-description .map {
+  text-align: center;
+}
+
+.map iframe {
+  width: 1250px;
+  height: 360px;
+}
+
+.details {
+  display: grid;
+  width: 90%;
+  margin: auto;
+  grid-template: repeat(3, 100px) / repeat(2, 600px);
+  justify-content: center;
+  column-gap: 50px;
+  row-gap: 10px;
+}
+
+.details .address {
+  background-color: #f5f5f5;
+}
+
+.details .email {
+  background-color: #f5f5f5;
+}
+
+.details .phone {
+  background-color: #f5f5f5;
+}
+
+.details .opening-hours {
+  background-color: #f5f5f5;
+}
+
+.address .icon {
+  width: 40px;
+  height: 40px;
+  position: relative;
+  color: white;
+  background-color: #ce1212;
+  top: 30px;
+  border-radius: 20px;
+}
+
+.address .icon i {
+  margin-left: 11px;
+  margin-top: 11px;
+}
+
+.address-content {
+  margin-left: 52px;
+}
+
+.address-content h3 {
+  font-family: "Inter", sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: rgb(125, 125, 125);
+}
+
+.address-content p {
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: rgb(33, 37, 41);
+}
+
+.email .icon {
+  width: 40px;
+  height: 40px;
+  position: relative;
+  color: white;
+  background-color: #ce1212;
+  top: 30px;
+  border-radius: 20px;
+}
+
+.email .icon i {
+  margin-left: 11px;
+  margin-top: 11px;
+}
+
+.email-content {
+  margin-left: 52px;
+}
+
+.email-content h3 {
+  font-family: "Inter", sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: rgb(125, 125, 125);
+}
+
+.email-content p {
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: rgb(33, 37, 41);
+}
+
+.phone .icon {
+  width: 40px;
+  height: 40px;
+  position: relative;
+  color: white;
+  background-color: #ce1212;
+  top: 30px;
+  border-radius: 20px;
+}
+
+.phone .icon i {
+  margin-left: 11px;
+  margin-top: 11px;
+}
+
+.phone-content {
+  margin-left: 52px;
+}
+
+.phone-content h3 {
+  font-family: "Inter", sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: rgb(125, 125, 125);
+}
+
+.phone-content p {
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: rgb(33, 37, 41);
+}
+
+.opening-hours .icon {
+  width: 40px;
+  height: 40px;
+  position: relative;
+  color: white;
+  background-color: #ce1212;
+  top: 30px;
+  border-radius: 20px;
+}
+
+.opening-hours .icon i {
+  margin-left: 11px;
+  margin-top: 11px;
+}
+
+.opening-content {
+  margin-left: 52px;
+}
+
+.opening-content h3 {
+  font-family: "Inter", sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: rgb(125, 125, 125);
+}
+
+.opening-content p {
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: rgb(33, 37, 41);
+}
+
+.submit-a-ticket {
+  background-color: #ffffff;
+  width: 66%;
+  height: 400px;
+  margin: auto;
+  position: relative;
+  box-shadow: 0 0 100px #00000014;
+}
+
+.form-control {
+  display: grid;
+  grid-template: repeat(7, 50px) / repeat(2, 1fr);
+  gap: 13px 10px;
+  width: 100%;
+  padding: 20px;
+  position: absolute;
+  top: 0;
+}
+
+.form-control .input-group-name {
+  grid-row: 1/2;
+  grid-column: 1/2;
+}
+.input-group-name input {
+  width: 100%;
+  height: 52px;
+}
+
+.input-group-email input {
+  width: 93%;
+  height: 52px;
+}
+
+.form-control .input-group-subject {
+  grid-column: 1/3;
+}
+
+.input-group-subject input {
+  width: 96.5%;
+  height: 52px;
+}
+
+.input-group-textarea textarea {
+  width: 96.5%;
+  height: 150px;
+}
+
+.form-control .input-group-textarea {
+  grid-row: 3/5;
+  grid-column: 1/3;
+}
+
+.form-control .submit-button {
+  grid-row: 6/7;
+  grid-column: 1/3;
+  text-align: center;
+}
+
+.form-control .submit-button button {
+  width: 15%;
+  height: 50px;
+  border-color: #e61414;
+  border-radius: 50px;
+  border-style: solid;
+  background-color: #e61414;
+  color: white;
+}
+
+footer {
+  background-image: url(./img/textured-metal-background.jpg);
+  color: #fff;
+  box-shadow: 0px -1px 5px #0007;
+  background-size: contain;
+  margin-top: 100px;
+}
+
+footer .container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding-top: 30px;
+}
+
+footer .about img {
+  width: 40px;
+  height: 40px;
+  position: relative;
+}
+
+footer .about h2 {
+  position: absolute;
+  left: 10%;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 700;
+  font-size: 30px;
+}
+
+footer .about h2 span {
+  color: red;
+}
+
+footer .about h3 {
+  text-align: center;
+  padding: 0.625rem;
+  border-bottom: 2px solid #ddd6;
+  margin-bottom: 0.625rem;
+}
+
+footer .about p {
+  padding-top: 10px;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+footer .about .social-links {
+  display: flex;
+  justify-content: space-around;
+}
+
+footer .about .social-links {
+  text-decoration: none;
+}
+
+footer .about .social-links li a i {
+  color: white;
+  font-size: 20px;
+}
+footer .about .social-links li {
+  list-style: none;
+}
+
+.subscription-group input {
+  width: 80%;
+  height: 30px;
+}
+
+.subscription-box h3 {
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  font-size: 18.72px;
+}
+
+.subscription-box p {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+.subscription-group button {
+  border-color: red;
+  border-style: solid;
+  border-radius: 2px;
+  padding: 8px;
+  background-color: rgb(183, 29, 29);
+  color: white;
+}
+
+.subscription-group button:hover {
+  background-color: #e61414;
+}
+
+.subscription .quick-links {
+  width: 70%;
+}
+
+.subscription .quick-links h3 {
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  font-size: 18.72px;
+}
+
+.quick-links .two-columns ul li {
+  list-style: none;
+}
+
+.quick-links .two-columns ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+.subscription .quick-links .two-columns {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-weight: 400;
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+}
+.quick-links .two-columns ul li {
+  position: relative;
+  padding-bottom: 5px;
+  left: 0;
+  transform: left 1s;
+}
+
+.quick-links .two-columns ul li:hover {
+  background-color: #222222;
+  left: 10%;
+}
+
+.contact-details h3 {
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  font-size: 18.72px;
+}
+
+.contact-details ul li i {
+  color: red;
+  font-size: 20px;
+}
+
+.contact-details ul li {
+  font-size: 20px;
+  padding-bottom: 10px;
+  list-style: none;
+}
