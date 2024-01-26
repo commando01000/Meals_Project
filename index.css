@@ -3,6 +3,11 @@
   margin: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--scroll-padding, 80px);
+}
+
 ::selection {
   background-color: #d85454;
   color: white;

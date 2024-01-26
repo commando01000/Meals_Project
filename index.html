@@ -482,5 +482,13 @@
         </div>
       </div>
     </footer>
+    <script>
+      navHeight = document.querySelector("nav").offsetHeight;
+      document.documentElement.style.setProperty(
+        "--scroll-padding",
+        navHeight + 5 + "px"
+      );
+      console.log(navHeight);
+    </script>
   </body>
 </html>
